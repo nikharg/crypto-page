@@ -40,7 +40,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 100%;
+  width: 99.8 vw;
   height: 95.6vh;
   color: #fff;
 }
@@ -349,8 +349,8 @@
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  border-left: 2px solid #242731;
-  border-right: 2px solid #242731;
+  border-left: 0.1rem solid #242731;
+  border-right: 0.1rem solid #242731;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
