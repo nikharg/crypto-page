@@ -41,4 +41,8 @@ const Middle = () => {
     }
 }
 
+<<<<<<< HEAD
 export default Middle
+=======
+export default Middle
+>>>>>>> 672afd83e213cc29abd32bfba95e78e95e6ca838
