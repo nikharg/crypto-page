@@ -6,7 +6,7 @@ import RewardBar from './RewardBar'
 import LinkBar from './LinkBar'
 import Tabs from './Tabs'
 
-const middle = () => {
+const Middle = () => {
 
     const [userData, setUserData] = useState()
     const url = "https://raw.githubusercontent.com/akshita151199/APIs/main/data";
@@ -41,4 +41,4 @@ const middle = () => {
     }
 }
 
-export default middle
+export default Middle
