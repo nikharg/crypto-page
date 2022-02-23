@@ -6,6 +6,10 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+body {
+  width: 100vw;
+  height: 100vh;
+}
 .main-container {
   height: 100vh;
   width: 100vw;
@@ -13,15 +17,15 @@
     width: 100wv;
     height: 4.4vh;
     background-color: #3772ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     p {
       color: #fff;
       font-family: "Poppins", sans-serif;
       font-weight: 500;
       font-size: 1.2rem;
       line-height: 26px;
-      text-align: center;
-      position: relative;
-      top: 25%;
     }
   }
   .inner-container {
@@ -29,13 +33,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: (100-0.2)vw;
+    width: (100-0.2) vw;
     height: 95.6vh;
     color: #fff;
     .left-bar {
       height: 100%;
       width: 18vw;
-      padding: 2.5rem;
+      padding: 2rem;
       position: relative;
       transition: width 0.2s ease-in-out;
       .user {
@@ -43,7 +47,6 @@
         align-items: center;
         justify-content: space-between;
         .user-info {
-          margin-left: 0.5rem;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -71,16 +74,16 @@
         }
       }
       .navigations {
-        margin: 2.5rem 0 0 -1rem;
+        margin: 1.5rem 0 0 0;
         color: #808191;
+        padding: 0;
         .options {
           margin: 0.5rem 0;
-          padding-left: 1rem;
           font-family: "Inter", sans-serif;
           font-size: 1.2rem;
           display: flex;
           align-items: center;
-          height: 4rem;
+          height: 2.5rem;
           border-radius: 12px;
           &:hover {
             background-color: #353945;
@@ -89,29 +92,29 @@
             transition: 0.3s;
           }
           .icon {
-            width: 2rem;
-            height: 2rem;
-            margin-right: 2rem;
+            width: 1.4rem;
+            height: 1.4rem;
+            margin: 0 1rem;
           }
         }
       }
       .extras {
         position: absolute;
         bottom: 2rem;
-        right: 4rem;
-        left: 2rem;
+        right: 1.5rem;
+        left: 1.5rem;
         .buttons {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          gap: 0.7rem;
+          gap: 0.5rem;
           cursor: pointer;
           .price {
             background-color: #353945;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 1rem;
+            gap: 0.4rem;
             width: 100%;
             height: 3rem;
             border-radius: 10px;
@@ -148,35 +151,35 @@
           align-items: center;
           justify-content: flex-start;
           gap: 0.8rem;
-          .icon{
+          .icon {
             color: #808191;
           }
-          .switch{
+          .switch {
             position: relative;
             display: inline-block;
             width: 70px;
             height: 34px;
-            span{
+            span {
               color: #808191;
-              .moon{
+              .moon {
                 position: absolute;
                 top: 7px;
                 left: 5px;
                 font-size: 1.3rem;
               }
-              .sun{
+              .sun {
                 position: absolute;
                 top: 7px;
                 right: 5px;
                 font-size: 1.3rem;
               }
             }
-            input{
+            input {
               opacity: 0;
               width: 0;
               height: 0;
             }
-            .slider{
+            .slider {
               position: absolute;
               cursor: pointer;
               top: 0;
@@ -185,7 +188,7 @@
               bottom: 0;
               background-color: #353945;
               border-radius: 34px;
-              &::before{
+              &::before {
                 position: absolute;
                 content: "";
                 height: 26px;
@@ -213,10 +216,10 @@
     .inactive {
       height: 100%;
       width: 5vw;
-      padding: 2.5rem;
+      padding: 2.6rem;
       position: relative;
-      .user{
-        margin-left: -1rem;
+      .user {
+        margin-left: -2.2rem;
         gap: 0.5rem;
         .user-info {
           margin-left: 0;
@@ -224,26 +227,57 @@
             display: none;
           }
         }
-      } 
-      .navigations .options p {
-        display: none;
       }
-      .extras{
+      .navigations {
+        min-width: 4rem;
+        .options {
+          transform: translateX(-2rem);
+          margin-top: -0.1rem;
+          p {
+            display: none;
+          }
+        }
+      }
+      .extras {
         right: 0.8rem;
         left: 0.8rem;
-        .buttons{
+        .buttons {
           flex-direction: column;
-          .price{
+          .price {
             gap: 0.2rem;
+            font-size: 0.8rem;
           }
-          .buy{
+          .buy {
             gap: 0.2rem;
+            font-size: 0.8rem;
+            text-align: center;
           }
-      } 
+        }
+        .toggles{
+          flex-direction: column;
+          .switch{
+            span{
+              .moon{
+                top: 2px;
+              }
+              .sun{
+                top: 2px;
+              }
+            }
+            .slider{
+              &::before{
+                bottom: 3px;
+                height: 20px;
+                width: 20px;
+              }
+            }
+          }
+        }
       }
     }
     .middle {
       height: 100%;
+      overflow: scroll;
       flex: 1;
       border-left: 0.1rem solid #242731;
       border-right: 0.1rem solid #242731;
@@ -360,13 +394,16 @@
             background-color: #3772ff;
             font-family: "Inter", sans-serif;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1rem;
             padding: 0.7rem 1.2rem 0.7rem 1.2rem;
             border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             .icon {
               margin-right: 0.5rem;
-              height: 1.2rem;
-              width: 1.2rem;
+              height: 0.9rem;
+              width: 0.9rem;
             }
           }
         }
@@ -386,14 +423,15 @@
           }
         }
       }
-      .hide-tut{
+      .hide-tut {
         display: none;
       }
       .link-bar {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 2rem;
+        width: 100%;
+        gap: 1rem;
         .links {
           background: #191b20;
           opacity: 0.8;
@@ -405,7 +443,7 @@
             display: flex;
             align-items: center;
             gap: 0.4rem;
-            font-size: 1.4rem;
+            font-size: 1rem;
             .icon {
               width: 1rem;
               height: 1rem;
@@ -419,18 +457,19 @@
             color: #808191;
             font-family: "Inter", sans-serif;
             margin: 1.2rem 0;
-            font-size: 1.2rem;
+            font-size: 1rem;
           }
           .link {
             border-radius: 8px;
             background-color: #242731;
             font-family: "Inter", sans-serif;
             font-weight: 500;
-            font-size: 1.2rem;
+            font-size: 0.8rem;
             padding: 1rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 0.5rem;
           }
         }
       }
@@ -457,9 +496,9 @@
               margin-top: 5px;
             }
           }
-          .active{
+          .active {
             color: #fff;
-            .line{
+            .line {
               background-color: #3772ff;
             }
           }
@@ -474,6 +513,7 @@
           justify-content: space-around;
           height: 3rem;
           font-weight: 500;
+          font-size: 0.8rem;
           font-family: "Inter", sans-serif;
           .title {
             height: 100%;
@@ -491,6 +531,7 @@
           justify-content: space-around;
           height: 5rem;
           display: none;
+          font-size: 0.8rem;
           .tab {
             width: 100%;
             height: 100%;
@@ -555,7 +596,7 @@
             }
           }
         }
-        .active-user{
+        .active-user {
           display: block;
           background: rgba(36, 39, 49, 0.4);
           border-radius: 5px;
@@ -569,7 +610,7 @@
     .right-bar {
       height: 100%;
       width: 25vw;
-      padding: 3rem 3rem 3rem 3rem;
+      padding: 3rem 2rem 3rem 2rem;
       .btns {
         display: flex;
         align-items: center;
@@ -587,17 +628,17 @@
           gap: 0.5rem;
           font-family: "Poppins", sans-serif;
           font-weight: 400;
-          font-size: 1.2rem;
-          padding: 0.7rem 0 0.7rem 0;
+          font-size: 0.8rem;
+          padding: 0.7rem ;
           img {
             width: 1.5rem;
             height: 1.5rem;
           }
-          .icon{
+          .icon {
             font-size: 0.9rem;
           }
         }
-        .wallet{
+        .wallet {
           flex: 6.5;
           cursor: pointer;
           display: flex;
@@ -608,12 +649,12 @@
           gap: 1rem;
           font-family: "Poppins", sans-serif;
           font-weight: 400;
-          font-size: 1.2rem;
-          padding: 0.7rem 0 0.7rem 0;
-          .wallet-icon{
+          font-size: 0.8rem;
+          padding: 0.7rem;
+          .wallet-icon {
             color: #3772ff;
           }
-          .icon-arrow{
+          .icon-arrow {
             font-size: 0.9rem;
           }
         }
@@ -630,7 +671,7 @@
           gap: 0.7rem;
           font-family: "Inter", sans-serif;
           font-weight: 500;
-          font-size: 1.4rem;
+          font-size: 1.2rem;
           .icon {
             width: 1rem;
             height: 1rem;
@@ -639,7 +680,7 @@
         .link {
           font-family: "Poppins", sans-serif;
           font-weight: 400;
-          font-size: 1.3rem;
+          font-size: 0.9rem;
           margin: 2rem 0;
           width: 100%;
           input {
@@ -649,7 +690,7 @@
             width: 100%;
             height: 3rem;
             padding: 0 1rem 0 1rem;
-            font-size: 1.3rem;
+            font-size: 0.9rem;
             color: #fff;
             font-weight: 300;
             margin-top: 1.5rem;
@@ -667,7 +708,7 @@
           display: flex;
           align-items: center;
           justify-content: space-between;
-          gap: 1rem;
+          gap: 0.5rem;
           width: 90%;
           cursor: pointer;
           .cLink {
@@ -675,20 +716,22 @@
             font-family: "Inter", sans-serif;
             font-weight: 700;
             width: 100%;
-            font-size: 1.1rem;
-            padding: 0.7rem 1.2rem 0.7rem 1.2rem;
+            height: 2.5rem;
+            font-size: 0.8rem;
+            padding: 0.7rem 0.3rem 0.7rem 0.3rem;
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             .icon {
               margin-right: 0.5rem;
-              height: 1.2rem;
-              width: 1.2rem;
+              height: 0.8rem;
+              width: 0.8rem;
             }
           }
           .cancel {
             width: 100%;
+            height: 2.5rem;
             border: 1px solid #242731;
             display: flex;
             align-items: center;
@@ -696,145 +739,144 @@
             border-radius: 12px;
             font-family: "Inter", sans-serif;
             font-weight: 700;
-            font-size: 1.1rem;
-            padding: 0.7rem 1.2rem 0.7rem 1.2rem;
+            font-size: 0.8rem;
+            padding: 0.7rem 0.3rem 0.7rem 0.3rem;
             .icon {
               margin-right: 0.5rem;
-              height: 1.2rem;
-              width: 1.2rem;
+              height: 0.8rem;
+              width: 0.8rem;
             }
           }
         }
       }
     }
   }
-  .light{
+  .light {
     background-color: rgb(240, 245, 246);
     color: #000;
-    .left-bar{
-      .navigations{
+    .left-bar {
+      .navigations {
         color: black;
-        .options{
-          &:hover{
+        .options {
+          &:hover {
             background-color: #3772ff;
           }
         }
       }
-      .extras{
-        .buttons{
-          .price{
+      .extras {
+        .buttons {
+          .price {
             background-color: rgba(128, 128, 128, 0.74);
           }
         }
-        .toggles{
-          .icon{
+        .toggles {
+          .icon {
             color: #000;
           }
-          .switch{
-            span{
-              .sun{
+          .switch {
+            span {
+              .sun {
                 color: gray;
               }
             }
-            .slider{
+            .slider {
               background-color: #abe8ff;
             }
           }
         }
       }
     }
-    .middle{
-      .top-bar{
-        .wallet{
+    .middle {
+      .top-bar {
+        .wallet {
           margin: 1px solid red;
           background: rgb(189, 212, 241);
         }
       }
-      .reward-bar{
+      .reward-bar {
         background-color: #3772ff;
         color: #fff;
-        .etc{
-          .btn{
+        .etc {
+          .btn {
             background-color: #35394544;
           }
         }
       }
-      .link-bar{
-        .links{
+      .link-bar {
+        .links {
           background: #3772ff;
           opacity: 1;
           color: #fff;
-          .title{
+          .title {
             color: #fff;
           }
-          .link{
+          .link {
             background-color: #e2f7ff;
             color: #000;
           }
         }
       }
-      .tabs{
+      .tabs {
         color: white;
-        .select-tab{
-          .tab{
+        .select-tab {
+          .tab {
             color: #414353;
           }
-          .active{
+          .active {
             color: #000;
           }
-
         }
       }
-      .info{
-        .titles{
+      .info {
+        .titles {
           background-color: #3772ff;
         }
-        .details{
+        .details {
           background-color: #a7c0fb;
           color: #000;
-          .asset{
-            .info{
-              .detail{
+          .asset {
+            .info {
+              .detail {
                 color: #000;
-                .btn{
+                .btn {
                   background: rgb(211, 228, 250);
                   color: #000;
                 }
               }
             }
           }
-          .amount{
-            .status{
+          .amount {
+            .status {
               color: #000;
             }
           }
-          .referral{
-            .link{
+          .referral {
+            .link {
               color: #000;
             }
           }
         }
       }
     }
-    .right-bar{
-      .btns{
-        .cryptoDrop{
+    .right-bar {
+      .btns {
+        .cryptoDrop {
           background-color: #3772ff;
           color: #fff;
         }
       }
-      .link-sec{
-        .link{
-          input{
+      .link-sec {
+        .link {
+          input {
             background-color: #abe8ff;
             color: #000;
           }
         }
-        .btns{
-          .cLink{
+        .btns {
+          .cLink {
             color: #fff;
           }
-          .cancel{
+          .cancel {
             background-color: #d4f0fc;
             border: none;
           }
@@ -843,3 +885,34 @@
     }
   }
 }
+// @media (min-width: 768px) {
+//   .inner-container{
+//     width: 100%;
+//     height: 100%;
+//     .left-bar{
+//       border: 1px solid blue;
+//       .user{
+//         .user-info{
+//           margin: 0;
+//         }
+//       }
+//       .navigations{
+//         border: 1px solid red;
+//         padding: 0;
+//         .options{
+//           font-size: 0.1rem;
+//           margin: 0;
+//           max-height: 2.5rem;
+//           width: 13rem;
+//           background-color: #2b2557;
+//           .icon{
+//             margin-right: 1rem;
+//             border: 1px solid red;
+//             height: 1.5rem;
+//             width: 1.5rem;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }

@@ -7,6 +7,11 @@
   font-family: "Poppins", sans-serif;
 }
 
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
 .main-container {
   height: 100vh;
   width: 100vw;
@@ -16,6 +21,15 @@
   width: 100wv;
   height: 4.4vh;
   background-color: #3772ff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .main-container .announcement p {
@@ -24,9 +38,6 @@
   font-weight: 500;
   font-size: 1.2rem;
   line-height: 26px;
-  text-align: center;
-  position: relative;
-  top: 25%;
 }
 
 .main-container .inner-container {
@@ -48,7 +59,7 @@
 .main-container .inner-container .left-bar {
   height: 100%;
   width: 18vw;
-  padding: 2.5rem;
+  padding: 2rem;
   position: relative;
   -webkit-transition: width 0.2s ease-in-out;
   transition: width 0.2s ease-in-out;
@@ -67,7 +78,6 @@
 }
 
 .main-container .inner-container .left-bar .user .user-info {
-  margin-left: 0.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -105,13 +115,13 @@
 }
 
 .main-container .inner-container .left-bar .navigations {
-  margin: 2.5rem 0 0 -1rem;
+  margin: 1.5rem 0 0 0;
   color: #808191;
+  padding: 0;
 }
 
 .main-container .inner-container .left-bar .navigations .options {
   margin: 0.5rem 0;
-  padding-left: 1rem;
   font-family: "Inter", sans-serif;
   font-size: 1.2rem;
   display: -webkit-box;
@@ -120,7 +130,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 4rem;
+  height: 2.5rem;
   border-radius: 12px;
 }
 
@@ -133,16 +143,16 @@
 }
 
 .main-container .inner-container .left-bar .navigations .options .icon {
-  width: 2rem;
-  height: 2rem;
-  margin-right: 2rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  margin: 0 1rem;
 }
 
 .main-container .inner-container .left-bar .extras {
   position: absolute;
   bottom: 2rem;
-  right: 4rem;
-  left: 2rem;
+  right: 1.5rem;
+  left: 1.5rem;
 }
 
 .main-container .inner-container .left-bar .extras .buttons {
@@ -155,7 +165,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  gap: 0.7rem;
+  gap: 0.5rem;
   cursor: pointer;
 }
 
@@ -170,7 +180,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  gap: 1rem;
+  gap: 0.4rem;
   width: 100%;
   height: 3rem;
   border-radius: 10px;
@@ -303,12 +313,12 @@
 .main-container .inner-container .inactive {
   height: 100%;
   width: 5vw;
-  padding: 2.5rem;
+  padding: 2.6rem;
   position: relative;
 }
 
 .main-container .inner-container .inactive .user {
-  margin-left: -1rem;
+  margin-left: -2.2rem;
   gap: 0.5rem;
 }
 
@@ -318,6 +328,16 @@
 
 .main-container .inner-container .inactive .user .user-info .user-name {
   display: none;
+}
+
+.main-container .inner-container .inactive .navigations {
+  min-width: 4rem;
+}
+
+.main-container .inner-container .inactive .navigations .options {
+  -webkit-transform: translateX(-2rem);
+          transform: translateX(-2rem);
+  margin-top: -0.1rem;
 }
 
 .main-container .inner-container .inactive .navigations .options p {
@@ -338,14 +358,39 @@
 
 .main-container .inner-container .inactive .extras .buttons .price {
   gap: 0.2rem;
+  font-size: 0.8rem;
 }
 
 .main-container .inner-container .inactive .extras .buttons .buy {
   gap: 0.2rem;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.main-container .inner-container .inactive .extras .toggles {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main-container .inner-container .inactive .extras .toggles .switch span .moon {
+  top: 2px;
+}
+
+.main-container .inner-container .inactive .extras .toggles .switch span .sun {
+  top: 2px;
+}
+
+.main-container .inner-container .inactive .extras .toggles .switch .slider::before {
+  bottom: 3px;
+  height: 20px;
+  width: 20px;
 }
 
 .main-container .inner-container .middle {
   height: 100%;
+  overflow: scroll;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -522,15 +567,24 @@
   background-color: #3772ff;
   font-family: "Inter", sans-serif;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1rem;
   padding: 0.7rem 1.2rem 0.7rem 1.2rem;
   border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .main-container .inner-container .middle .reward-bar .amount .btn .icon {
   margin-right: 0.5rem;
-  height: 1.2rem;
-  width: 1.2rem;
+  height: 0.9rem;
+  width: 0.9rem;
 }
 
 .main-container .inner-container .middle .reward-bar .etc {
@@ -573,7 +627,8 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  gap: 2rem;
+  width: 100%;
+  gap: 1rem;
 }
 
 .main-container .inner-container .middle .link-bar .links {
@@ -593,7 +648,7 @@
       -ms-flex-align: center;
           align-items: center;
   gap: 0.4rem;
-  font-size: 1.4rem;
+  font-size: 1rem;
 }
 
 .main-container .inner-container .middle .link-bar .links .fee .icon {
@@ -609,7 +664,7 @@
   color: #808191;
   font-family: "Inter", sans-serif;
   margin: 1.2rem 0;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .main-container .inner-container .middle .link-bar .links .link {
@@ -617,7 +672,7 @@
   background-color: #242731;
   font-family: "Inter", sans-serif;
   font-weight: 500;
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   padding: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -628,6 +683,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  gap: 0.5rem;
 }
 
 .main-container .inner-container .middle .tabs {
@@ -691,6 +747,7 @@
       justify-content: space-around;
   height: 3rem;
   font-weight: 500;
+  font-size: 0.8rem;
   font-family: "Inter", sans-serif;
 }
 
@@ -721,6 +778,7 @@
       justify-content: space-around;
   height: 5rem;
   display: none;
+  font-size: 0.8rem;
 }
 
 .main-container .inner-container .middle .info .details .tab {
@@ -850,7 +908,7 @@
 .main-container .inner-container .right-bar {
   height: 100%;
   width: 25vw;
-  padding: 3rem 3rem 3rem 3rem;
+  padding: 3rem 2rem 3rem 2rem;
 }
 
 .main-container .inner-container .right-bar .btns {
@@ -886,8 +944,8 @@
   gap: 0.5rem;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
-  font-size: 1.2rem;
-  padding: 0.7rem 0 0.7rem 0;
+  font-size: 0.8rem;
+  padding: 0.7rem;
 }
 
 .main-container .inner-container .right-bar .btns .cryptoDrop img {
@@ -918,8 +976,8 @@
   gap: 1rem;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
-  font-size: 1.2rem;
-  padding: 0.7rem 0 0.7rem 0;
+  font-size: 0.8rem;
+  padding: 0.7rem;
 }
 
 .main-container .inner-container .right-bar .btns .wallet .wallet-icon {
@@ -957,7 +1015,7 @@
   gap: 0.7rem;
   font-family: "Inter", sans-serif;
   font-weight: 500;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 
 .main-container .inner-container .right-bar .link-sec .title .icon {
@@ -968,7 +1026,7 @@
 .main-container .inner-container .right-bar .link-sec .link {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
-  font-size: 1.3rem;
+  font-size: 0.9rem;
   margin: 2rem 0;
   width: 100%;
 }
@@ -980,7 +1038,7 @@
   width: 100%;
   height: 3rem;
   padding: 0 1rem 0 1rem;
-  font-size: 1.3rem;
+  font-size: 0.9rem;
   color: #fff;
   font-weight: 300;
   margin-top: 1.5rem;
@@ -1024,7 +1082,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  gap: 1rem;
+  gap: 0.5rem;
   width: 90%;
   cursor: pointer;
 }
@@ -1034,8 +1092,9 @@
   font-family: "Inter", sans-serif;
   font-weight: 700;
   width: 100%;
-  font-size: 1.1rem;
-  padding: 0.7rem 1.2rem 0.7rem 1.2rem;
+  height: 2.5rem;
+  font-size: 0.8rem;
+  padding: 0.7rem 0.3rem 0.7rem 0.3rem;
   border-radius: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1050,12 +1109,13 @@
 
 .main-container .inner-container .right-bar .link-sec .btns .cLink .icon {
   margin-right: 0.5rem;
-  height: 1.2rem;
-  width: 1.2rem;
+  height: 0.8rem;
+  width: 0.8rem;
 }
 
 .main-container .inner-container .right-bar .link-sec .btns .cancel {
   width: 100%;
+  height: 2.5rem;
   border: 1px solid #242731;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1069,14 +1129,14 @@
   border-radius: 12px;
   font-family: "Inter", sans-serif;
   font-weight: 700;
-  font-size: 1.1rem;
-  padding: 0.7rem 1.2rem 0.7rem 1.2rem;
+  font-size: 0.8rem;
+  padding: 0.7rem 0.3rem 0.7rem 0.3rem;
 }
 
 .main-container .inner-container .right-bar .link-sec .btns .cancel .icon {
   margin-right: 0.5rem;
-  height: 1.2rem;
-  width: 1.2rem;
+  height: 0.8rem;
+  width: 0.8rem;
 }
 
 .main-container .light {
